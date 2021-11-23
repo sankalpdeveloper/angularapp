@@ -1,0 +1,47 @@
+<div class="p-4">
+  <div class="container">
+    <h4>{{ 'login.hello.label' | translate }} ! {{ user }}</h4>
+    <p>{{ 'login.loginmsg.label' | translate }}</p>
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <div style="display: block;">
+          <canvas
+            baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"
+          ></canvas>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div style="display: block;">
+          <canvas
+            baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [colors]="barChartColors"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"
+          ></canvas>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <canvas
+          #myCanvas
+          id="canvas"
+          baseChart
+          [chartType]="lineChartType"
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [colors]="lineChartColors"
+          [options]="lineChartOptions"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+</div>

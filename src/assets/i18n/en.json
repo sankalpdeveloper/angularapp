@@ -1,0 +1,36 @@
+{
+    "login": {
+      "title": "Login Form",
+      "email.label": "Email",
+      "password.label": "Password",
+      "buttonLogin.label": "Login",
+      "register.label": "Register",
+      "hello.label": "Hello",
+      "loginmsg.label": "You're logged in Successfully",
+      "home.title": "Home",
+      "user.title": "Users",
+      "usersData.title": "Users Data",
+      "logout.title": "Logout",
+      "test.title": "Test Module",
+      "dropdown.title": "Select Language",
+      "english.title": "English",
+      "hindi.title": "Hindi",
+      "userList.label": "User List",
+      "name.label": "Name",
+      "username.label": "User Name",
+      "phone_number.label": "Phone Number",
+      "gender.label": "Gender",
+      "male.label": "Male",
+      "female.label": "Female",
+      "add.label": "Add User",
+      "edit.label": "Edit",
+      "delete.label": "Delete",
+      "modal.title": "Update Profile",
+      "cancel.label": "Cancel",
+      "google": "Google Map",
+      "datepicker":"Datepicker",
+      "image":"ImageUpload",
+      "theme":"Theme"
+    }
+  }
+  

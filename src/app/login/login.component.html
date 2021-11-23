@@ -1,0 +1,75 @@
+<div class="card">
+  <h4 class="card-header">Login</h4>
+  <div class="card-body">
+    <form
+      name="form"
+      (ngSubmit)="f.form.valid && Submit()"
+      #f="ngForm"
+      novalidate
+      autocomplete="off"
+    >
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="text"
+            name="email"
+            class="form-control"
+            placeholder="abc@gmail.com"
+            [(ngModel)]="users.email"
+            #email="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
+            required
+            email
+          />
+          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">
+              Email must be a valid email address
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="******"
+            class="form-control"
+            [(ngModel)]="users.password"
+            #password="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+            required
+            minlength="6"
+          />
+          <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">
+              Password must be at least 6 characters
+            </div>
+          </div>
+        </div>
+
+        <div class="d-grid gap-2 mt-3">
+          <button class="btn btn-primary mr-1">
+            Login
+          </button>
+        </div>
+        <hr />
+        <div class="d-grid gap-2 col-6 mx-auto mt-2">
+          <a [routerLink]="['/user-add']" class="btn btn-success">
+            Register
+          </a>
+        </div>
+      </div>
+    </form>
+    <div class="text-center mt-2">
+      <button class="btn btn-social-icon" (click)="signInWithGoogle()">
+        <i class="bi bi-google"></i>
+      </button>
+      <button class="btn btn-social-icon" (click)="signInWithFB()">
+        <i class="bi bi-facebook"></i>
+      </button>
+    </div>
+  </div>
+</div>

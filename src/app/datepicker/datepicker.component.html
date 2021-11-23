@@ -1,0 +1,40 @@
+<div class="card">
+    <h4 class="card-header">
+      Date Picker
+    </h4>
+    <div class="card-body">
+      <form autocomplete="off">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Start Date</label>
+            <input
+              class="form-control"
+              placeholder="{{startDate | date}}"
+              name="dp"
+              [(ngModel)]="startDate"
+              ngbDatepicker
+              #d="ngbDatepicker"
+              (click)="d.toggle()"
+              [minDate]="minDate"
+              [maxDate]="{year: 2021, month: 11, day: 20}"
+            />
+          </div>
+          <div class="form-group">
+            <label>End Date</label>
+            <input
+              class="form-control"
+              placeholder="{{model | date}}"
+              name="edp"
+              [(ngModel)]="endDate"
+              ngbDatepicker
+              #ed="ngbDatepicker"
+              (click)="ed.toggle()"
+              [minDate]="{year: 2021, month: 10, day: 1}"
+              [maxDate]="{year: 2021, month: 10, day: 31}"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

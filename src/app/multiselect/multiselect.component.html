@@ -1,0 +1,57 @@
+<div class="card">
+  <h4 class="card-header">
+    Multiselect Dropdown
+  </h4>
+  <div class="card-body">
+    <form>
+      <div class="form-row">
+        <div class="mt-3">
+          <angular2-multiselect
+            [data]="dropdownList"
+            name="selectItem"
+            [(ngModel)]="selectedItems"
+            [settings]="dropdownSettings"
+            (onSelect)="onItemSelect($event)"
+            (onDeSelect)="OnItemDeSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+            (onDeSelectAll)="onDeSelectAll($event)"
+          ></angular2-multiselect>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col-md-6">
+    <ul *ngFor="let item of switchArray" [ngSwitch]="item.status">
+      <li *ngSwitchCase="'Approved'" class="text-success">
+        {{ item.id }} ({{ item.status }})
+      </li>
+      <li *ngSwitchCase="'Rejected'" class="text-primary">
+        {{ item.id }} ({{ item.status }})
+      </li>
+      <li *ngSwitchCase="'Pending'" class="text-danger">
+        {{ item.id }} ({{ item.status }})
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <ul class="nav nav-pills">
+      <li>
+        <a class="btn btn-primary" (click)="switchData('Approved')">
+          Approved Status
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-primary" (click)="switchData('Rejected')">
+          Rejected Status
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-primary" (click)="switchData('Pending')">
+          Pending Status
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

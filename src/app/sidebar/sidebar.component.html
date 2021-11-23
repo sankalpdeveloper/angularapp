@@ -1,0 +1,111 @@
+<div class="sidebar" [ngClass]="{ expanded: isExpanded }">
+  <div class="header">
+    <h4>
+      <i class="bi bi-windows"></i>
+    </h4>
+    <h1 class="title">
+      Cmarix
+    </h1>
+    <div class="toggle" (click)="handleSidebarToggle()">
+      <span class="chevron"></span>
+    </div>
+  </div>
+  <div class="content">
+    <div class="link">
+      <div
+        class="content"
+        [routerLink]="['/home']"
+        [routerLinkActive]="'active'"
+      >
+        <div class="icon">
+          <i class="bi bi-house-door"></i>
+        </div>
+        <div class="title">{{ 'login.home.title' | translate }}</div>
+      </div>
+    </div>
+    <div class="link">
+      <div
+        class="content"
+        [routerLink]="['/user']"
+        [routerLinkActive]="'active'"
+      >
+        <div class="icon">
+          <i class="bi bi-person"></i>
+        </div>
+        <div class="title">{{ 'login.user.title' | translate }}</div>
+      </div>
+    </div>
+    <div class="link">
+      <div
+        class="content"
+        [routerLink]="['/user-list']"
+        [routerLinkActive]="'active'"
+      >
+        <div class="icon">
+          <i class="bi bi-people"></i>
+        </div>
+        <div class="title">{{ 'login.userList.label' | translate }}</div>
+      </div>
+    </div>
+    <div class="link">
+      <div
+        class="content"
+        [routerLink]="['/google-map']"
+        [routerLinkActive]="'active'"
+      >
+        <div class="icon">
+          <i class="bi bi-pin-map"></i>
+        </div>
+        <div class="title">{{ 'login.google' | translate }}</div>
+      </div>
+    </div>
+    <div class="link">
+      <div
+        class="content"
+        [routerLink]="['/datepicker']"
+        [routerLinkActive]="'active'"
+      >
+        <div class="icon">
+          <i class="bi bi-calendar-week"></i>
+        </div>
+        <div class="title">{{ 'login.datepicker' | translate }}</div>
+      </div>
+    </div>
+    <div class="link">
+      <div
+        class="content"
+        [routerLink]="['/image-upload']"
+        [routerLinkActive]="'active'"
+      >
+        <div class="icon">
+          <i class="bi bi-image"></i>
+        </div>
+        <div class="title">{{ 'login.image' | translate }}</div>
+      </div>
+    </div>
+    <div class="link">
+      <div
+        class="content"
+        [routerLink]="['/multiselect']"
+        [routerLinkActive]="'active'"
+      >
+        <div class="icon">
+          <i class="bi bi-check-circle"></i>
+        </div>
+        <div class="title">Multi Select</div>
+      </div>
+    </div>
+    <div class="link">
+      <div
+        class="content"
+        [routerLink]="['/tree']"
+        [routerLinkActive]="'active'"
+      >
+        <div class="icon">
+          <i class="bi bi-tree"></i>
+        </div>
+        <div class="title">Tree Structure</div>
+      </div>
+    </div>
+  </div>
+</div>

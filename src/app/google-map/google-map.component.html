@@ -1,0 +1,15 @@
+<div class="container p-3">
+    <h4 class="p-3"><i class="bi bi-pin-map"></i> {{ 'login.google' | translate }}</h4>
+  <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+    <agm-marker
+      [latitude]="latitude"
+      [longitude]="longitude"
+      [markerDraggable]="true"
+      (dragEnd)="markerDragEnd($event)"
+    ></agm-marker>
+  </agm-map>
+
+  <div>Address: {{ address }}</div>
+  <div>Latitude: {{ latitude }}</div>
+  <div>Longitude: {{ longitude }}</div>
+</div>

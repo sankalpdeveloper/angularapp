@@ -1,0 +1,27 @@
+.content {
+  margin-left: 80px;
+  transition: 0.3s;
+  &.sidebarExpanded {
+    margin-left: 160px;
+  }
+}
+.navbar {
+  margin-left: 5%;
+  transition: 0.3s;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  &.sidebarExpanded {
+    margin-left: 11.5%;
+  }
+}
+.navbar-nav .nav-link{
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+.dropdown-menu{
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+.dropdown-item{
+  color: var(--text-color);
+}

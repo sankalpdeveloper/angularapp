@@ -1,0 +1,63 @@
+<div class="row p-5">
+  <div class="col-md-6">
+    <!-- Image Upload -->
+    <i class="bi bi-x" *ngIf="removeUpload" (click)="removeUploadedFile()"></i>
+    <div class="group-gap">
+      <!-- // Upload image -->
+      <div class="avatar-upload">
+        <div class="avatar-edit">
+          <input
+            type="file"
+            id="imageUpload"
+            accept=".png, .jpg, .jpeg"
+            #fileInput
+            [(ngModel)]="users.image"
+            name="image"
+            #image="ngModel"
+            (change)="uploadFile($event)"
+          />
+        </div>
+        <div class="avatar-preview">
+          <div
+            id="imagePreview"
+            [style.backgroundImage]="'url(' + imageUrl + ')'"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <!-- // Upload Button -->
+    <button
+      type="button"
+      class="btn btn-primary button mt-3"
+      (click)="fileInput.click()"
+    >
+      Upload Image
+    </button>
+  </div>
+  <div class="col-md-6 mt-5">
+    <h3>Upload File to Amazon S3 Bucket</h3>
+    <label class="btn btn-default">
+      <input
+        type="file"
+        accept=".png, .jpg, .jpeg"
+        (change)="selectFile($event)"
+      />
+    </label>
+
+    <button
+      class="btn btn-success"
+      [disabled]="!selectedFiles"
+      (click)="uploadAWSS3()"
+    >
+      Upload
+    </button>
+  </div>
+</div>
+<div class="row p-5">
+  <div *ngFor="let item of allImageData; let i = index" class="col-md-4">
+    <img src="{{ s3Url }}{{ item.Key }}" width="200px" height="200px" />
+    <button class="btn btn-danger mt-3" (click)="deleteImages(item.Key)">
+      Delete
+    </button>
+  </div>
+</div>

@@ -1,0 +1,133 @@
+<div class="card">
+  <h4 class="card-header">
+    {{ 'login.edit.label' | translate }}
+  </h4>
+  <div class="card-body">
+    <form
+      name="form"
+      (ngSubmit)="myform.form.valid && Submit()"
+      #myform="ngForm"
+      novalidate
+      autocomplete="off"
+    >
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{ 'login.name.label' | translate }}</label>
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            [(ngModel)]="users.name"
+            #name="ngModel"
+            [ngClass]="{ 'is-invalid': myform.submitted && name.invalid }"
+            pattern="^[a-zA-Z\s]*$"
+            required
+          />
+          <div
+            *ngIf="myform.submitted && name.invalid"
+            class="invalid-feedback"
+          >
+            <div *ngIf="name.errors.required">Name is required</div>
+            <div *ngIf="name.errors.pattern">
+              Enter Only Character
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>{{ 'login.gender.label' | translate }}</label>
+          <select
+            name="gender"
+            class="form-control"
+            [(ngModel)]="users.gender"
+            #gender="ngModel"
+            [ngClass]="{ 'is-invalid': myform.submitted && gender.invalid }"
+            required
+          >
+            <option value=""></option>
+            <option value="male">{{ 'login.male.label' | translate }}</option>
+            <option value="female">
+              {{ 'login.female.label' | translate }}
+            </option>
+          </select>
+          <div
+            *ngIf="myform.submitted && gender.invalid"
+            class="invalid-feedback"
+          >
+            <div *ngIf="gender.errors.required">Gender is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>{{ 'login.phone_number.label' | translate }}</label>
+          <input
+            type="text"
+            name="phone_number"
+            class="form-control"
+            [(ngModel)]="users.phone_number"
+            #phone_number="ngModel"
+            [ngClass]="{
+              'is-invalid': myform.submitted && phone_number.invalid
+            }"
+            required
+            maxlength="10"
+            pattern="^((\\+91-?)|0)?[0-9]{10}$"
+          />
+          <div
+            *ngIf="myform.submitted && phone_number.invalid"
+            class="invalid-feedback"
+          >
+            <div *ngIf="phone_number.errors.required">
+              Phone Number is required
+            </div>
+            <div *ngIf="phone_number.errors.pattern">
+              Enter Only Digit
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>{{ 'login.email.label' | translate }}</label>
+          <input
+            type="text"
+            name="email"
+            class="form-control"
+            [(ngModel)]="users.email"
+            #email="ngModel"
+            [ngClass]="{ 'is-invalid': myform.submitted && email.invalid }"
+            required
+            email
+            [disabled]="true"
+          />
+          <div
+            *ngIf="myform.submitted && email.invalid"
+            class="invalid-feedback"
+          >
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">
+              Email must be a valid email address
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="d-grid gap-2 col-6 mt-2">
+              <button class="btn btn-register">
+                {{ 'login.edit.label' | translate }}
+              </button>
+            </div>
+            <div class="d-grid gap-2 col-6 mt-2">
+              <a
+                class="btn btn-cancel ml-1"
+                type="reset"
+                routerLink="/user-list"
+              >
+                {{ 'login.cancel.label' | translate }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

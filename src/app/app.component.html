@@ -1,0 +1,63 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light"
+  [ngClass]="{ sidebarExpanded: sidebarExpanded }"
+  *ngIf="showNavbar"
+>
+  <div class="collapse navbar-collapse" id="navbarContent">
+    <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          {{ 'login.user.title' | translate }}
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdown"
+        >
+          <li>
+            <a class="dropdown-item" (click)="useLanguage('en')">
+              {{ 'login.english.title' | translate }}
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" (click)="useLanguage('hn')">
+              {{ 'login.hindi.title' | translate }}
+            </a>
+          </li>
+          <li>
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="darkTheme"
+                [formControl]="darkTheme"
+              />
+              <label class="form-check-label" for="darkTheme">
+                {{ 'login.theme' | translate }}
+              </label>
+            </div>
+          </li>
+          <li>
+            <a class="dropdown-item" (click)="logout()">
+              {{ 'login.logout.title' | translate }}
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+<app-sidebar
+  [isExpanded]="sidebarExpanded"
+  (toggleSidebar)="sidebarExpanded = !sidebarExpanded"
+  *ngIf="showSidebar"
+></app-sidebar>
+<div class="content" [ngClass]="{ sidebarExpanded: sidebarExpanded }">
+  <router-outlet></router-outlet>
+</div>

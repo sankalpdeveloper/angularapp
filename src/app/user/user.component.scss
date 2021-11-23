@@ -1,0 +1,18 @@
+.button {
+  margin-left: 50%;
+  margin-top: -25%;
+}
+
+.bi {
+  margin-left: 25%;
+  font-size: 25px;
+  cursor: pointer;
+}
+.btn-register {
+  background-color: var(--btn-back);
+  border-color: var(--btn-back);
+}
+.btn-cancel {
+  background-color: var(--btn-cancel);
+  border-color: var(--btn-cancel);
+}

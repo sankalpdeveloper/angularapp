@@ -1,0 +1,20 @@
+.btn-delete-user {
+  margin-left: 5%;
+  width: 40px;
+  text-align: center;
+  box-sizing: content-box;
+}
+.bi {
+  font-size: 25px;
+}
+
+.btn-edit{
+  background-color: var(--btn-edit);
+  border-color: var(--btn-edit);
+  color: var(--text-color);
+}
+
+.btn-danger{
+  background-color: var(--btn-danger);
+  border-color: var(--btn-danger);
+}
