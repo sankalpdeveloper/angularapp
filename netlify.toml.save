@@ -1,6 +1,6 @@
 [build]
-  publish = "dist/Angular-app"
-  command = "ng build"
+  publish = "dist/anglify"
+  command = "ng build --prod"
 [[redirects]]
   from = "/*"
   to = "/index.html"
